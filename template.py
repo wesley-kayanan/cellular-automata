@@ -25,3 +25,15 @@ class PygameScreen:
     def change_title(self, title):
         self.title = title
         pg.display.set_caption(title)
+
+class Timer:
+    def __init__(self, refresh_rate):
+        self.time = pg.time.get_ticks()
+        self.refresh_rate = refresh_rate
+    
+    def check_update(self):
+        if pg.time.get_ticks() - self.time >= self.refresh_rate:
+            self.time = pg.time.get_ticks()
+            return True
+        return False
+        

@@ -5,9 +5,12 @@ def constant(f):
         return f()
     return property(fget, fset)
 
-class Color(object):
+class Color():
     @constant
     def WHITE():
         return (255,255,255)
 
-COLOR = Color()
+class Size():
+    @constant
+    def DEFAULT():
+        return (500, 500)
